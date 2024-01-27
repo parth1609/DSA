@@ -111,6 +111,7 @@ class sllitrator:
 
                 
 # Test program
+'''
 mylist = sll()
 mylist.insert_at_start(20)
 mylist.insert_at_start(10)
@@ -124,7 +125,7 @@ mylist.printlist()
 print(" ")
 for x in mylist:
     print(x)
-
+'''
 
 
 

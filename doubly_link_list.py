@@ -105,7 +105,7 @@ class dllitrator:
         self.kurr = self.kurr.next
         return data
 
-
+'''
 mylist = dll()
 mylist.insert_at_start(20)
 mylist.insert_at_start(40)
@@ -116,3 +116,4 @@ print(" ")
 mylist.delete_itm(20)
 for i in mylist:
     print(i,end=' ')
+'''

@@ -26,7 +26,7 @@ class qu:
             raise IndexError("quu is underflow")
         
     def size(self):
-        return len(self.mylist   )
+        return len(self.mylist)
     
     def printlist(self):
         for i in self.mylist:

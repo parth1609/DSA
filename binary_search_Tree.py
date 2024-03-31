@@ -193,6 +193,9 @@ class BST:
         return root
     
     def size(self):
+        # The line `return len(self.inorder())` in the provided code snippet is part of the `size()`
+        # method within the Binary Search Tree (BST) class. This method is used to calculate and
+        # return the number of nodes in the binary search tree.
         return len(self.inorder())
     
 
@@ -205,16 +208,8 @@ class BST:
         else:
             return max(self.height(root.left), self.height(root.right)) + 1
 
-s = BST()
-# Insert elements into the Binary Search Tree using random 
-for i in range(1,20,1):
-    s.insert(random.randint(1,1000))
-
-print(s.height(s.root))
-
-
-
 
 
     
-   
+
+

@@ -211,5 +211,39 @@ class BST:
 
 
     
+    def merge_trees(self, tree1, tree2):
+        # The provided code snippet defines a method named `merge_trees` within the Binary Search
+        # Tree (BST) class. This method is used to merge two binary search trees into a single binary
+        # search tree.
+        if tree1 is None:
+            return tree2
+        if tree2 is None:
+            return tree1
+        
+        merged_node = node(tree1.itm + tree2.itm)
+        # Recursively merge the left subtrees
+        merged_node.left = self.merge_trees(tree1.left, tree2.left)
+        # Recursively merge the right subtrees
+        merged_node.right = self.merge_trees(tree1.right, tree2.right)
+        return merged_node
+
+
+
+        # T1 = BST()
+        # T1.insert(30)
+        # T1.insert(40)
+        # T1.insert(10)
+        # T1.insert(20)
+
+        # T2 = BST()
+        # T2.insert(5)
+        # T2.insert(78)
+        # T2.insert(41)
+        # T2.insert(1)
+
+        # tree3 = BST()
+        # tree3.root = tree3.merge_trees(T1.root, T2.root)
+        # print(tree3.inorder())
+
 
 

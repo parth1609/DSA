@@ -232,18 +232,33 @@ class BST:
         # T1 = BST()
         # T1.insert(30)
         # T1.insert(40)
-        # T1.insert(10)
-        # T1.insert(20)
 
         # T2 = BST()
         # T2.insert(5)
-        # T2.insert(78)
-        # T2.insert(41)
-        # T2.insert(1)
 
         # tree3 = BST()
         # tree3.root = tree3.merge_trees(T1.root, T2.root)
         # print(tree3.inorder())
 
 
+    def sum_node(self,root):
+        """
+        This Python function recursively calculates the sum of all nodes in a binary tree starting
+        from the root node.
+        """
+        return self.rsum_node(self.root)
+    
+    def rsum_node(self,root):
+        if root is None:
+            return 0
+        else:
+            left_sum = self.rsum_node(root.left)
+            right_sum = self.rsum_node(root.right)
+            return  root.itm + left_sum + right_sum
+    
 
+    # Nsum = BST()
+    # Nsum.insert(1)
+    # Nsum.insert(2)
+    # Nsum.insert(3)
+    # print(Nsum.sum_node(Nsum.root))

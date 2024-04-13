@@ -68,6 +68,8 @@ class BST:
         elif data >root.itm:
             return self.rsearch(root.right, data)
     
+
+# Depth first traversal
     # return in inorder (left,root,right) 
     #  use recursive function rinorder() 
     def inorder(self):
@@ -199,6 +201,9 @@ class BST:
         return len(self.inorder())
     
 
+# Breadth first Transversal
+
+
     def height(self, root):
         """
         The function calculates the height of a binary tree rooted at the given node.
@@ -241,7 +246,7 @@ class BST:
         # print(tree3.inorder())
 
 
-    def sum_node(self,root):
+    def sum_all_node(self,root):
         """
         This Python function recursively calculates the sum of all nodes in a binary tree starting
         from the root node.
@@ -261,4 +266,30 @@ class BST:
     # Nsum.insert(1)
     # Nsum.insert(2)
     # Nsum.insert(3)
-    # print(Nsum.sum_node(Nsum.root))
+    # print(Nsum.sum_all_node(Nsum.root))
+        
+
+
+    def sum_left_leaf(self,root):
+        if root is None:
+            return 0
+        lftsum = 0
+        if root.left:
+            if root.left.left is None and root.right.left is None:
+                lftsum += root.left.itm
+            else:
+                lftsum += self.sum_left_leaf(root.left)
+        lftsum += self.sum_left_leaf(root.right)
+        return lftsum
+        
+
+
+    # Nsum = BST()
+    # Nsum.insert(20)
+    # Nsum.insert(10)
+    # Nsum.insert(35)
+    # Nsum.insert(9)
+    # Nsum.insert(25)
+    # Nsum.insert(12)
+    # Nsum.insert(52)
+    # print(Nsum.sum_left_leaf(Nsum.root))

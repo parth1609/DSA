@@ -1,3 +1,10 @@
+'''
+in Recursion if we can call the function Recursivly then thrn if we cant print 
+so it shows 'segmentaion fault' which means memory is Overflow
+this is also known as 'stack overflow'
+'''
+
+
 def printn(n):
     if n>0:
         printn(n-1)
@@ -58,6 +65,20 @@ def sumsquN(n):
         return 1
     return (n*n) + sumsquN(n-1)
      
-    
+'''***********************************************'''
 
-print(sumsquN(2))
+# multiple tecursion call
+'''
+# in fibbonacci list [0,1 and go forward in fibbonacci series ] 
+# to get fibbonacci no. at particular Index 
+[0,1] here n = 2
+so next number is sum of [n-1] and [n-2] index
+'''
+def fibbonacci(n):
+    if n<=1:
+        return n
+    return fibbonacci(n-1) + fibbonacci(n-2)
+
+
+
+print(fibbonacci(2))

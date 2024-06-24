@@ -1,6 +1,9 @@
 # First negative integer in every window of size k
 
 
+
+#this is acceptable changes 
+
 def printFirstNegativeInteger( A, N, K):
     # code here
     i = j = 0
@@ -9,7 +12,7 @@ def printFirstNegativeInteger( A, N, K):
     while  j < N:
         if A[j] < 0:
             li.append(A[j])
-        if (j-i+1) > K:
+        if (j-i+1) < K:
             j+=1
         elif (j-i+1) == K:
             if li: # if li not empty 
@@ -19,5 +22,5 @@ def printFirstNegativeInteger( A, N, K):
             else:
                 ans.append(0)
             i+=1
-        j+=1
+            j+=1
     return ans

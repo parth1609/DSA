@@ -1,0 +1,16 @@
+class Solution:
+    def isIsomorphic(self, s: str, t: str) -> bool:
+        if len(s) != len(t):
+            return False
+        char_s = {}
+        char_t = {}
+        i = 0
+        while i < len(s):
+            if s[i] not in char_s:
+                char_s[s[i]] = i
+            if t[i] not in char_t:
+                char_t[t[i]] = i
+            if char_s[s[i]] != char_t[t[i]]:
+                return False
+            i+=1
+        return True 

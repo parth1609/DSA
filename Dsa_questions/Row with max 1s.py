@@ -1,18 +1,26 @@
 class Solution:
-
-	def rowWithMax1s(self,arr):
-		# code here
-		row = len(arr)
-		kol = len(arr[0])
-		
-		ons_row = -1
-		R = 0
-		K = kol-1
-		
-		while R<row and K >=0:
-		    if arr[R][K] == 0:
-		        R+=1
-		    else:
-		        ons_row = R
-		        K-=1
-		return ons_row
+    def Find_first_occurance_of(self,arr):
+        low = 0
+        high = len(arr)-1
+        count_ones = -1
+        while low <= high:
+            mid = (low + high) // 2
+            if arr[mid] == 1:
+                count_ones = len(arr) - mid
+                high = mid - 1
+            elif arr[mid] == 0:
+                low = mid + 1
+            else:
+                high = mid - 1
+        return count_ones
+                
+    def rowWithMax1s(self, arr):
+        # code here
+        count_max = 0
+        index = -1
+        for i in range(len(arr)):
+            count_ones = self.Find_first_occurance_of(arr[i])
+            if count_max < count_ones:
+                count_max = count_ones
+                index = i
+        return index
